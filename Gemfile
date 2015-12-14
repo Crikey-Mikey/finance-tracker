@@ -6,10 +6,12 @@ gem 'rails', '4.2.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# custom
+# authentication
 gem 'devise'
+# Bootstrap
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+# Stock Quote
 gem 'stock_quote'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -52,9 +54,11 @@ group :development do
 end
 
 group :production do
-  # postgres
+  # Use postgres as Heroku doesn't support sqlite3
   gem 'pg'
-  # make app Heroku ready
+  # enables serving assets in production and setting your logger to standard
+  # out, both of which are required to run a Rails 4 application
+  # on Heroku
   gem 'rails_12factor'
   
 end
